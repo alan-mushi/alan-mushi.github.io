@@ -1,0 +1,8 @@
+# Site settings
+title: Yet another tech blog.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "alan-mushi.github.io"
+github_username: alan-mushi
+
+# Build settings
+markdown: kramdown
