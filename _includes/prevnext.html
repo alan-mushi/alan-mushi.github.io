@@ -1,0 +1,15 @@
+<hr style="margin-top: 5%">
+
+<div style="text-align: center">
+    {% if include.paramPrev %}
+	<a href="{{ site.url }}/{{ include.paramPrev }}">Previous</a>
+	<span style="padding-left: 5%; padding-right: 5%">/</span>
+    {% endif %}
+	{% if include.paramOutline %}
+	<a href="{{ site.url }}/{{ include.paramOutline }}">Outline</a>
+	{% endif %}
+    {% if include.paramNext %}
+	<span style="padding-left: 5%; padding-right: 5%">/</span>
+	<a href="{{ site.url }}/{{ include.paramNext }}">Next</a>
+    {% endif %}
+</div>
