@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "[Chart.js] little update example"
+date:   2014-12-29
+tags:   chartjs
+---
+<script src="{{ site.url }}/assets/Chart.js" alt="Chart.js library as of pre-release v1.0.1 beta-4"></script>
+<script src="{{ site.url }}/assets/chartjs_example.js"></script>
+#What is Chart.js
+
+It's a very useful Javascript library to create charts, if you don't know about it yet head over [there](http://www.chartjs.org/).
+
+I would recommend this library for the great [documentation](http://www.chartjs.org/docs/) and ease of use compared to others.
+
+A new (pre-)release is out [v1.0.1 beta-4](https://github.com/nnnick/Chart.js/releases/tag/v1.0.1-beta.4) and bring some major improvements. I had the chance to play with the version 0.2.0 a while back for [monitor_it](https://github.com/alan-mushi/monitor_it) a simple remote system monitor. monitor_it required me to constantly update  multiple charts, at the time you could only do this by creating a new chart with the updated data. Not a clean way to update a chart... But it has changed : the new version now have a "update" feature (amongst other wonders).
+
+#Example
+
+Let's play with those new update features. I will only use a "Line" chart but these are transferable to other chart types.
+
+<canvas id="line_example" width="600" height="400"></canvas>
+
+> Your browser need to handle HTML 5 canvas to view the example above!
+
+You can see the source of this example in your browser or in the [github repository](https://github.com/alan-mushi/alan-mushi.github.io/blob/master/assets/chartjs_example.js).
+
+##Details
+Very few is needed for this example:
+
+1. Generate a chart with the value 0 for data and labels, add a bit of color
+2. Generate a random number for your next point
+3. Remove the oldest point from the chart (the one at the left): `my_chart.removeData()`
+4. Add your newly generated random number (at the right): `my_chart.addData([random_number])`
+5. Repeat steps 2 to 4
+
+`addData()` take an array for parameters, this is for multiple datasets (e.g. multiple lines on the chart). The values and datasets *must* be ordered the same way.
+
+#Other
+
+Moreover, this new version of Chart.js offer the possibility to get a point of the chart/dataset in a bubble. This feature is a bit buggy due to the animations but I trust it will be fixed soon enough.
+
+If you are looking for a more professional/feature-rich JS chart library and don't need the update feature, check out [metrics-graphics](http://metricsgraphicsjs.org/) from mozilla.
