@@ -199,3 +199,25 @@ pre {
         }
     }
 }
+
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 0px;
+	border-top: 1px solid $grey-color;
+	border-bottom: 1px solid $grey-color;
+	width: 100%;
+}
+
+thead {
+	th {
+		border-bottom: 1px solid $grey-color;
+		font-weight: normal;
+	}
+}
+
+tbody {
+	tr:nth-of-type(odd) {
+		background-color: $grey-color-light;
+	}
+}
