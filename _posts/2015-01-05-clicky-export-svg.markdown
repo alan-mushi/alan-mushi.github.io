@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[ClickRouter] Clicky export diagrams in SVG"
+title:  "[Click Modular Router] Clicky export diagrams in SVG"
 date:   2015-01-05
 tags:	gtk2 tutorial
 ---
