@@ -4,6 +4,7 @@ title:  "Execute an interactive script at boot with systemd"
 date:   2014-10-26
 tags:   systemd script
 category: asap
+linked:	yes
 ---
 
 # Goal
