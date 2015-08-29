@@ -15,7 +15,9 @@ layout: default
     {{ content }}
   </article>
 
-  <a href="{{ page.url | remove: '/asap' }}">See the full post</a>
+  {% if page.linked != null %}
+    <a href="{{ page.url | remove: '/asap' }}">See the full post</a>
+  {% endif %}
 
   {% include comments.html %}
 
