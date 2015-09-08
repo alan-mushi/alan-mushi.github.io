@@ -1,11 +1,11 @@
 ---
 layout: asap-post
-title:  "AEM curl list"
+title:  "AEM 6 curl list"
 date:   2015-09-29
 category: asap
 ---
 
-This is simply a list of bash/curl commands I used for [AEM for Docker](https://github.com/alan-mushi/AEM-for-Docker).
+This is simply a list of bash/curl commands I used for [AEM version 6 for Docker](https://github.com/alan-mushi/AEM-for-Docker).
 Everything is not in here, only commands I needed.
 See the last point of this post for more on how to make non listed curl commands.
 
