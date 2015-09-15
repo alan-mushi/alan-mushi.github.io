@@ -1,7 +1,7 @@
 ---
 layout: asap-post
 title:  "AEM 6 curl list"
-date:   2015-09-29
+date:   2015-08-29
 category: asap
 ---
 
