@@ -21,7 +21,7 @@ Back to the first method now. Two set of functions are available, here are the p
 {% highlight C %}
 struct json_object * json_tokener_parse(const char *str);
 
-const char * json_tokener_error_desc(enum json_tokener_error jerr)
+const char * json_tokener_error_desc(enum json_tokener_error jerr);
 struct json_object * json_tokener_parse_verbose(const char *str, enum json_tokener_error *error);
 {% endhighlight %}
 
