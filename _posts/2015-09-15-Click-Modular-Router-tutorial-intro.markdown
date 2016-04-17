@@ -18,7 +18,7 @@ Implementing entirely a protocol is complicated and time consuming (especially i
 
 > I'm not a native english speaker so if you notice language "problems", quirks or typos let me know. This also stands if you're a Click Modular Router guru!
 
-#Specifications for the dummy protocol
+# Specifications for the dummy protocol
 
 The dummy protocol is an application protocol and it works on top of UDP. It's composed of a unique packet type :
 
@@ -39,11 +39,11 @@ This protocol won't do much:
 * If the Data corresponds to something we know how to respond to we generate a dummy answer
 * We want to log all received answers and print them every X seconds
 
-#Things to know before coding
+# Things to know before coding
 
 A bit of background is needed before coding. Mainly you will need to know what an element is.
 
-##Elements
+## Elements
 
 An element is a software brick.
 You link elements to others, yielding the configuration for Click Modular Router.
@@ -65,14 +65,14 @@ Considering a top to bottom packet flow, PUSH is often on top of the elements an
 Some specific elements do the PUSH <-> PULL conversion, we will cover them in time.
 Other processing flows exist but I never had to use them.
 
-##Configuration
+## Configuration
 
 The configuration is a text file with a `.click` extension you provide as an argument to the `click` binary.
 You can do a lot of things configuration wise but you will need very few.
 Each line or link block is terminated by a semi-colon.
 A link is as simple as '->'.
 
-###Using elements
+### Using elements
 There are several ways to use an element in your configuration:
 
 * `DummyElem`: simplest way to instantiate an element
@@ -85,17 +85,17 @@ Implicitly '->' match port 0 (for source and destination), if you wish to link t
 `ElemA[1] -> [3]ElemB` will send the output port number 1 of 'ElemA' to the input port number 3 of 'ElemB'.
 Thus, `ElemA -> [1]ElemB` will send the output port number 0 of 'ElemA' to the input port number 1 of 'ElemB', nothing difficult here.
 
-###Using variables
+### Using variables
 
 You can also define variables for your configuration with the following syntax: `define($IFACENAME enp2s0);`.
 A specific syntax is available to ease the configuration of network interfaces: `AddressInfo(enp2s0 10.0.0.2 01:02:03:04:05:06);` you can then use 'enp2s0' for the IP or MAC address of a parameter.
 
-###Other possibilities
+### Other possibilities
 
 I encourage you to go to [the dedicated wiki page](http://www.read.cs.ucla.edu/click/docs/language) to know more about the configuration language.
 If you don't know where to start learn about element groups, they are quite useful.
 
-##Installing Click Modular Router
+## Installing Click Modular Router
 
 I won't cover this because it's well done on the [github repository of the project](https://github.com/kohler/click/).
 The only thing to do is to add the `--enable-local` flag for the configure step: all of our files will be in `elements/local/tuto` (you may want to create the folder now).
@@ -103,7 +103,7 @@ If you wonder what options to set for configure here is what you will _need_ to 
 
 Hence I won't use the kernel modules, only the 'userlevel' mode for Click Modular Router: it's way more suitable for development.
 
-##Implementing the Dummy protocol
+## Implementing the Dummy protocol
 
 I propose the following model:
 
@@ -118,7 +118,7 @@ I will detail the elements before implementing them. Here is an overview of the 
 
 ![provisional_config](/assets/Click_tuto_config.svg)
 
-#Outline
+# Outline
 
 I will do a "per file basis" tutorial outline:
 

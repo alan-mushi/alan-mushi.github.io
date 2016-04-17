@@ -11,7 +11,7 @@ I couldn't find it as a whole on Internet but I needed it to make the installer 
 This window is made by "dialog" (the program). If you don't already have it, check out [dialog's home page](http://invisible-island.net/dialog/).
 Many *nix distributions (if not all) already have a packet for it.
 
-#Systemd service file
+# Systemd service file
 
 If you didn't know it, every systemd service has a file. This file indicates many metadata/informations, checkout the `systemd.service` man page.
 
@@ -53,7 +53,7 @@ Systemd should now see our service:
 
 As you can see this service is currently useless, let's make it start at boot. There is two way to do it and depends if you can interact with the system *before* his first launch.
 
-##Start a service before the first launch
+## Start a service before the first launch
 
 If you can't use an interactive shell, typically you are creating a bootable image, you can still enable your service with a symlink:
 
@@ -63,11 +63,11 @@ If you can't use an interactive shell, typically you are creating a bootable ima
 
 > You may need to create the `/usr/lib/systemd/system/default.target.wants/` folder.
 
-##Enable a service (the handy way)
+## Enable a service (the handy way)
 
 An interactive shell simplify the process, it really don't do much more than do the symlink for you. Type `systemctl enable simple-window-dialog.service` and your system will start at boot.
 
-#The script file
+# The script file
 
 This file is to be placed in `/usr/bin/dialog-hello.sh` (don't forget to add executable permissions):
 
@@ -85,7 +85,7 @@ dialog --msgbox "Hello world!" 10 40
 
 Reboot and enjoy! (Ctrl + Alt + F7 to get back to the graphical environment).
 
-#To the infinite and beyond
+# To the infinite and beyond
 
 You can do many things to improve the script, after all this is only a PoC:
 

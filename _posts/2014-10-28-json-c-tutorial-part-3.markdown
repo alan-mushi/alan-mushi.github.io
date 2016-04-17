@@ -15,7 +15,7 @@ int json_object_put(struct json_object *obj);
 
 `json_object_get()` return `obj` (for convenience).`json_object_put()` returns 1 if and only if `obj` was freed, otherwise 0 is returned.
 
-#What the hell is a refcount ?
+# What the hell is a refcount ?
 
 "refcount" is short for "reference counting", it's a technique to share a pointer to some data across multiple programs / pieces of code.
 
@@ -31,7 +31,7 @@ So, when you add an array to object, what appends? "With great power comes great
 
 > If you want to get an idea of how implementing refcounts is like, head over here [www.xs-labs.com/en/archives/articles/c-reference-counting/](http://www.xs-labs.com/en/archives/articles/c-reference-counting/)
 
-#Example
+# Example
 
 {% gist alan-mushi/19546a0e2c6bd4e059fd json_refcount.c %}
 

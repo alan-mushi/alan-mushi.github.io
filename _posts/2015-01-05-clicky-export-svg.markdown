@@ -4,7 +4,7 @@ title:  "[Click Modular Router] Clicky export diagrams in SVG"
 date:   2015-01-05
 tags:	gtk2 tutorial
 ---
-#Clicky, ClickRouter and SVG
+# Clicky, ClickRouter and SVG
 
 ClickRouter is a modular router we are using/extending at school, I won't speak of it in depth in this post but you can [go here](https://github.com/kohler/click) for more details.
 
@@ -27,7 +27,7 @@ So I added, because I needed it, the SVG export via two pull requests:
 
 I did not wrote this to brag about it but I had a bit of trouble finding comprehensive documentation on how to make the second pull request's code.
 
-#Making a drop down in GTK+2 to select the file extension
+# Making a drop down in GTK+2 to select the file extension
 
 > Note: I'm not very knowledgeable in GTK+2, if you have a better way to do the following I would love to hear about it !
 

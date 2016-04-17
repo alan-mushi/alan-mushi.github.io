@@ -6,12 +6,12 @@ date:   2015-03-22
 
 > This will only be focused on the userdriver, the [linuxmodule](http://www.read.cs.ucla.edu/click/docs/linuxmodule) is slightly different.
 
-#Intro
+# Intro
 Let's say you wrote your element, this element has a parameter, for example an interval value in seconds. When you instantiate the element (by running click with you configuration file, creating and configuring your element) you pass this interval as a fixed parameter. Now what about changing it, dynamically, without restarting click? You can do this with a handler, this handler concept is great if you need to control your elements parameters to react to an event from the host. Most standard elements have this, for this example we will use `TimedSource`.
 
 So a handler is just some kind of distant function to read/write parameters/options of running elements.
 
-#ControlSocket
+# ControlSocket
 Connecting to a handler in userlevel is achieved by a tcp or a unix socket. In this example I will only demonstrate the tcp version because it's the most interesting (you can configure a router on another computer across the network!). If you need extra security, consider the unix socket instead because the tcp commands are sent in **clear text**. The server for this tcp connexion is the click router itself and it implements a simple command syntax that [I won't cover](http://www.read.cs.ucla.edu/click/elements/controlsocket#server-commands). The client side is a simple java application, if you are not satisfied with this application (it's not great) you can always code your own client.
 
 You have two choices to run this tcp connexion:
@@ -38,7 +38,7 @@ run: all
 	java ClickController $(HOST) $(PORT)
 {% endhighlight %}
 
-#The simplest example
+# The simplest example
 
 `TimedSource` has `INTERVAL` and `DATA` handlers but I will only demonstrate parameter reconfiguration with `INTERVAL`. As stated before I will use tcp to control the handlers, here is my click configuration file:
 

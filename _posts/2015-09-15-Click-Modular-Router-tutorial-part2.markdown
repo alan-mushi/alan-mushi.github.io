@@ -4,14 +4,14 @@ title:  "[Click Modular Router] Protocol implementation tutorial - part 2 DummyP
 date:   2015-9-15
 ---
 
-#Element skel generation
+# Element skel generation
 
 If you want to use this tutorial without copy/paste, or if you are developing other click elements, you may/will notice how repetitive the class declarations and simple methods are to write.
 As I don't quite enjoy repetitive tasks, here is a script that generates "skel" click elements:
 
 {% gist alan-mushi/417b1a77a62ab3f04388 skel_gen.sh %}
 
-#DummyPrint
+# DummyPrint
 
 The role of this element is to print the `Data` field of any incoming packet.
 The incoming packets must be stripped of their headers, leaving only the UDP data.
@@ -57,7 +57,7 @@ Finally, returning the packet is the same as sending it to the element's first o
 
 Note that the `simple_action(...)` method is often the one you need, especially in AGNOSTIC flow, think of it as a filter applied to each packet passing through your element.
 
-#DummyLog
+# DummyLog
 
 This element is used to display received answers periodically.
 The reason for this element to exist is to demonstrate the use of [Timers](http://read.cs.ucla.edu/click/doxygen/class_timer.html) and of element configuration (using the `configure(...)` method).

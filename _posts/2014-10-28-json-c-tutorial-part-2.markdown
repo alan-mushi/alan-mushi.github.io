@@ -6,7 +6,7 @@ tags:   tutorial json-c
 ---
 Two major categories of types exists in json-c, basic and composed.
 
-#Basic types
+# Basic types
 
 Namely boolean, int32, int64, double and string. All of those types have a new and a get method:
 
@@ -37,7 +37,7 @@ int json_object_get_string_len(struct json_object *obj);
 
 `json_object_new_string_len()` create a new json_object from the supplied string, the buffer size for the string is of size `len` (with `str[len+1] = '\0'`).
 
-#Composed types
+# Composed types
 
 Composed types are arrays and objects, in json arrays and objects can contain every combinason of types you can think of.
 
@@ -66,7 +66,7 @@ I never actually used `json_object_get_array()` and `json_object_get_object()`, 
 > Warning: in version 0.10 of json-c `json_object_object_add()` don't work properly if you try to overwrite a value for an existing key!
 > I strongly recommend you to use a newer version than 0.10. If you can't, apply the patch from this commit [github.com/json-c/json-c/commit/6988f53fcb05c13d99dd846494d79ea3bb3b1d4c](https://github.com/json-c/json-c/commit/6988f53fcb05c13d99dd846494d79ea3bb3b1d4c).
 
-#Identify the type of a json object
+# Identify the type of a json object
 
 As you might have noticed, every type is a `json_object`!
 To differentiate types two functions are available:
@@ -83,7 +83,7 @@ enum json_type json_object_get_type(struct json_object *obj);
 
 `json_type_null` correspond to a NULL `json_object` pointer.
 
-#Example
+# Example
 
 After all those mind mind-numbing prototypes it's example time. I didn't wish to demonstrate how to use every single function, after all it's almost identical from a boolean to any other basic type...
 

@@ -6,7 +6,7 @@ tags:   tutorial json-c
 ---
 Creating (writing lines for) new `json_objects` is *extremely* boring. Moreover, if you have to handle json as a string in input making your own parser isn't a bright idea.
 
-#Introducing json-c parser
+# Introducing json-c parser
 
 To parse a json string in json-c you have two methods. The first one is very easy to use but don't offer any options. The second one require some extra work to get the job done but support options.
 
@@ -29,7 +29,7 @@ The first function won't display any errors. If the parsing succeed you have the
 
 The second set of functions allows you to get a reason on why the parsing failed, it might be of assistance in case of malformated json strings (on purpose? :smiling_imp:).
 
-#Example
+# Example
 
 Pretty simple to use right ? So here is a short example:
 
@@ -68,7 +68,7 @@ jobj from str:
 ---
 {% endhighlight %}
 
-#The End
+# The End
 
 I hope you have all the explanations you need to get started with json-c, if not you can complain in the comments ;).
 

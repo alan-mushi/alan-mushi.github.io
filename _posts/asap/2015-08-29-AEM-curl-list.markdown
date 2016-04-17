@@ -14,7 +14,7 @@ Adjust the `CQ_PORT` variable to 4503 or 4502 for publish and author respectivel
 `CURL_RETRY_NUM` is advised for upload and installation mostly.
 I assume that AEM is running on localhost in the following.
 
-#AEM common commands
+# AEM common commands
 
 Installation of packages/bundles:
 
@@ -42,7 +42,7 @@ $CURL \
 	http://localhost:${CQ_PORT}/home/users/a/admin.rw.userprops.html
 {% endhighlight %}
 
-#AEM Publish
+# AEM Publish
 
 AEM Publish installation guide recommend at least two options to be deactivated:
 
@@ -71,7 +71,7 @@ $CURL -X POST \
 	http://localhost:${CQ_PORT}/.cqactions.htm
 {% endhighlight %}
 
-#AEM Author
+# AEM Author
 
 Activation of a "path tree":
 
@@ -156,7 +156,7 @@ $CURL -X POST \
 Flush agents and replication agents are very close (only a few details differ).
 A flush & replication agent's names is _only_ alphanum chars.
 
-##Flush agent
+## Flush agent
 
 Creation of the agent:
 
@@ -237,7 +237,7 @@ Finally you can test the connexion:
 $CURL http://localhost:${CQ_PORT}/etc/replication/agents.author/${flush_name}.test.html
 {% endhighlight %}
 
-#Replication Agent
+# Replication Agent
 
 The same curl command is used to create the replication and flush agent.
 
@@ -350,7 +350,7 @@ $CURL -X POST \
 	http://localhost:${CQ_PORT}/etc/replication/agents.author/publish/jcr:content
 {% endhighlight %}
 
-#How to make new curl commands
+# How to make new curl commands
 
 The basic idea is to spy on what's being exchanged.
 You can do this by using your browser (F12 then the network tab).

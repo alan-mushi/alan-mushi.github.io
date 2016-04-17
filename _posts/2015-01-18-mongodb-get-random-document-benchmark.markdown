@@ -9,7 +9,7 @@ date:   2015-01-18
 There isn't a command to get one record in a collection randomly in MongoDB so we need to get creative.
 I could find three way to deal with this problem, the first solution requires you to add something to your documents. This wasn't great for me so I came up with another solution. Finally the last one use `skip()`.
 
-#The random attribute: Method 1 & 2
+# The random attribute: Method 1 & 2
 
 This method is quite simple:
 
@@ -25,7 +25,7 @@ I found two sub-methods to achieve this:
 
 Both of those methods require some pre-processing, see benchmark for pre-processing scripts.
 
-#The ObjectID manipulation: Method 3
+# The ObjectID manipulation: Method 3
 
 The whole point of this method is to get a random document without adding anything to the collection. The method works by considering ObjectID values as a finite linear range of integer values coded in hexadecimal. It sounds a bit complicated but it's actually what you would do to get a random integer:
 
@@ -71,7 +71,7 @@ db.col.findOne({ _id: { $gte: random_id(first_obj_id_slice1, first_obj_id_slice2
 
 Because I wondered how this solution would hold-up against other methods I ran a minimalistic benchmark. The original benchmark idea is from [here](http://bdadam.com/blog/finding-a-random-document-in-MongoDB.html)
 
-#The skip trick: Method 4a & 4b
+# The skip trick: Method 4a & 4b
 
 This method is very basic, you query every documents in the collection and skip a random number of indexed documents. Thus, method 4a:
 
@@ -85,7 +85,7 @@ Method 4b is a small improvement of 4a, instead of executing `db.col.count()` ea
 
 Obviously method 4a is fine if your document count is constantly changing. For both of those methods you don't need to add anything to your documents this is a clear advantage.
 
-#Benchmarks
+# Benchmarks
 
 This benchmark ran on a 2nd generation Intel i3 processor (laptop version) with 4Go of ram and a SSD. For the software part I used MongoDB 2.6.6 on Archlinux. I didn't recorded the pre-processing phase for method 1 and 2 because the code didn't *felt* optimal.
 
@@ -114,7 +114,7 @@ Each benchmark consists of:
 
 You can find the whole set of gists I used [here](https://gist.github.com/alan-mushi/f41362ada94883c88817).
 
-##Results
+## Results
 Here are the results (in seconds):
 
 |           | Run 1 | Run 2 | Run 3 | Run 4 | Run 5 | Run 6 |

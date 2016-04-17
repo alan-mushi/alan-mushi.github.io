@@ -4,12 +4,12 @@ title:  "[ncurses] black magic with forms"
 date:   2014-11-30
 tags:   demo ncurses
 ---
-#Digressions
+# Digressions
 Ncurses is *black* magic, for real! You read the [magic book of spells](http://tldp.org/HOWTO/NCURSES-Programming-HOWTO/), you try copy paste of an example and you have a very basic, unsatisfactory test program. So you dive in the ressource only lost souls know as "manual pages". You do so hoping to improve/tweak your test program, so that it could actually do what it is you want to do. That's where things get harder. Man pages for the ncurses library are pretty good and thorough, but somehow your modifications makes the program reacting as... posessed (unexpected behaviours). Yeah you probably missed something, restart from the book of spells.
 
 This process is kind of frustrating and ncurses could use some examples, here is one.
 
-#Simple ncurses forms example
+# Simple ncurses forms example
 If you are reading this you might have encountered fields, HTML fields that is. You are most likely very used to navigate them, arrow keys, alphabetical keys, tabulation key (experts only)...
 
 **Ncurses fields are not like those.** Yeah that would be too simple.
@@ -22,7 +22,7 @@ A little thing worth noting:
 
 Imagine you are editing a field, you type in characters and at some point try to fetch the data of a field. Surprise, it won't work! Yes the characters you typed are printed in the field element but a little (hidden) thing called synchronisation is in the way. Indeed, you need to explicitly tell ncurses to copy what you typed in the field to the data attribute. To do this I use a hack-ish way: just leave and come back to the field. It's nasty I know, if you have a better way of doing things please let me know!
 
-#Code
+# Code
 
 > You might need to adjust the headers for ncurses (e.g. `<ncurses/XXX.h>` -> `<XXX.h>`) this depends on your distribution. Moreover, with some versions of gcc the command line supplied for the compilation may cause (fatal) errors, so remove `-Werror` and all should be fine.
 
