@@ -14,20 +14,20 @@ Examples have been tested on Archlinux with json-c (0.12-2) and clang (3.5.0).
 
 ## Why json-c ?
 
-Other libraries handle the json format in C but json-c have the advantage to be ligth and don't drag a whole set of gigantic dependencies (e.g. Glib). This is probably important if your program is oriented for embedded.
+Other libraries handle the json format in C, but json-c has the advantage of being light and doesn't drag a whole set of gigantic dependencies (e.g. Glib). This is probably important if your program is oriented for embedded.
 
 json-c is open source so check it out: [github.com/json-c/json-c](https://github.com/json-c/json-c)
 
 ## Installation
 
 I won't cover this part in depth, you should be able to install a package on your system.
-Bear in mind that the naming of this packet *isn't* consistant from a distribution to another. Here is a little list of all variants I've encountered:
+Bear in mind that the naming of these packages *aren't* consistent from one distribution to another. Here is a little list of all variants I've encountered:
 
 * json-c
 * libjson
 * libjson0
 
-For the rest of the tutorial you will obviously need the developpent version of those packages.
+For the rest of the tutorial you will obviously need the development version of those packages.
 
 ## Compilation
 
@@ -49,7 +49,7 @@ The documentation is available online: [json-c.github.io/json-c/](https://json-c
 
 # Outline
 
-I did not reinvented the weel (shame on me), a good tutorial on json-c already exist: [linuxprograms.wordpress.com/2010/05/20/json-c-libjson-tutorial/](http://linuxprograms.wordpress.com/2010/05/20/json-c-libjson-tutorial/). However, the tutorial linked above have some issues mainly due to outdated versions, partial example files, memory leaks and symbol filtering preventing most copy/paste. This is *too* painful, I had to (try to) make a better tutorial!
+I did not reinvent the wheel (shame on me), a good tutorial on json-c already exists: [linuxprograms.wordpress.com/2010/05/20/json-c-libjson-tutorial/](http://linuxprograms.wordpress.com/2010/05/20/json-c-libjson-tutorial/). However, the tutorial linked above has some issues mainly due to outdated versions, partial example files, memory leaks and symbol filtering preventing most copy/paste. This is *too* painful, I had to (try to) make a better tutorial!
 
 Thus, the outline:
 
