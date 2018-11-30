@@ -39,7 +39,7 @@ int json_object_get_string_len(struct json_object *obj);
 
 # Composed types
 
-Composed types are arrays and objects, in json arrays and objects can contain every combinason of types you can think of.
+Composed types are arrays and objects in json, and can contain every combination of types you can think of.
 
 {% highlight C %}
 struct json_object * json_object_new_array(void);
@@ -63,7 +63,7 @@ I never actually used `json_object_get_array()` and `json_object_get_object()`, 
 `json_object_array_sort()` don't have much of documentation but it's in fact a direct call to the `qsort()` system fonction (man 3 qsort).
 `json_object_object_foreach()` is a handy foreach loop, `key` and `val` will be declared by the macro, you can name those variable as you please.
 
-> Warning: in version 0.10 of json-c `json_object_object_add()` don't work properly if you try to overwrite a value for an existing key!
+> Warning: in version 0.10 of json-c `json_object_object_add()` doesn't work properly if you try to overwrite the value of an existing key!
 > I strongly recommend you to use a newer version than 0.10. If you can't, apply the patch from this commit [github.com/json-c/json-c/commit/6988f53fcb05c13d99dd846494d79ea3bb3b1d4c](https://github.com/json-c/json-c/commit/6988f53fcb05c13d99dd846494d79ea3bb3b1d4c).
 
 # Identify the type of a json object
@@ -99,7 +99,7 @@ Details of the security code:
 security-code[0] = 12345
 security-code[1] = true
 
-Json in plain text: 
+Json in plain text:
 ---
 { "message": "We have been made!", "security-code": [ 12345, true ] }
 ---
