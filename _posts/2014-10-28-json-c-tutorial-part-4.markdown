@@ -8,7 +8,7 @@ Creating (writing lines for) new `json_objects` is *extremely* boring. Moreover,
 
 # Introducing json-c parser
 
-To parse a json string in json-c you have two methods. The first one is very easy to use but don't offer any options. The second one supports more options, but require some extra work to get the job done.
+To parse a json string in json-c you have two methods. The first one is very easy to use but don't offer any options. The second one supports more options, but requires some extra work to get the job done.
 
 I will only cover the first method because it's the only one I used. However, the second method isn't useless: It should be more efficient if you frequently parse a lot of json strings. Those slight performance improvements come from the implementation of the first method (roughly):
 
