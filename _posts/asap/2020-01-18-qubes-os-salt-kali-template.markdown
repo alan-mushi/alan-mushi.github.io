@@ -100,7 +100,7 @@ Add `kali.top` to salt and kickoff the template creation:
 # qubesctl --all state.highstate
 {% endhighlight %}
 
-`kali-linux-full` installation took forever (and not having stdout to make it go faster by starring at it is a bit frustrating). Once everything ran smoothly, we have our Kali template and assorted AppVM:
+`kali-linux-full` installation took forever (and not having stdout to make it go faster by starring at it is a bit frustrating, use `--show-output` for that). Once everything ran smoothly, we have our Kali template and assorted AppVM:
 
 {% highlight text %}
 # qvm-ls | grep kali
