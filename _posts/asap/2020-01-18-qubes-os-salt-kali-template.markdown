@@ -1,7 +1,7 @@
 ---
 layout: asap-post
 title:  "Qubes-os: Kali template using salt"
-date:   2020-03-18
+date:   2020-01-18
 category: asap
 ---
 
@@ -100,7 +100,7 @@ Add `kali.top` to salt and kickoff the template creation:
 # qubesctl --all state.highstate
 {% endhighlight %}
 
-`kali-linux-full` installation took forever (and not having stdout to make it go faster by starring at it is a bit frustrating, use `--show-output` for that). Once everything ran smoothly, we have our Kali template and assorted AppVM:
+`kali-linux-full` installation took forever (and not having stdout to make it go faster by starring at it is a bit frustrating, use `--show-output` to troubleshoot errors). Once everything ran smoothly, we have our Kali template and assorted AppVM:
 
 {% highlight text %}
 # qvm-ls | grep kali
