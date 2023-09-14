@@ -36,7 +36,7 @@ spec:
         port: 9999
         expose: true
         exposedPort: 9999
-        protocol: TCP
+        protocol: UDP
     additionalArguments:
     - "--entryPoints.udpep.address=:9999/udp"
     - "--entrypoints.udpep.udp.timeout=1"
