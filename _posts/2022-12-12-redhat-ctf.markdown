@@ -19,7 +19,7 @@ The infrastructure running the challenges was pretty different from last year's 
 
 The goodness of having Traefik bundled-in is made a bit annoying by the slightly different configurations for versions as reflected by the mess of StackOverflow responses and Traefik reference docs' organization. So here's a recap of the info I needed for all things Traefik on k3s version [v1.24.4](https://github.com/k3s-io/k3s/releases/tag/v1.24.4+k3s1#Embedded%20Component%20Versions):
 
-1. Defining an UDP entrypoint. Edit helm's manifest for Traefik's configuration on the master node `/var/lib/rancher/k3s/server/manifests/traefik-config.yaml`, here the entrypoint is called `udpep`:
+1. Define and expose an UDP entrypoint + redirect `web` entrypoint to `websecure`. Edit helm's manifest for Traefik's configuration on the master node `/var/lib/rancher/k3s/server/manifests/traefik-config.yaml`, here the entrypoint is called `udpep`:
 
 {% highlight yaml %}
 apiVersion: helm.cattle.io/v1
@@ -29,12 +29,20 @@ metadata:
   namespace: kube-system
 spec:
   valuesContent: |-
-	additionalArguments:
-	- "--entryPoints.udpep.address=:9999/udp"
-	- "--entrypoints.udpep.udp.timeout=1"
-	- "--accesslog=true"
-	entryPoints:
-  	  udpep:
+    ports:
+      web:
+        redirectTo: websecure
+      udpep:
+        port: 9999
+        expose: true
+        exposedPort: 9999
+        protocol: TCP
+    additionalArguments:
+    - "--entryPoints.udpep.address=:9999/udp"
+    - "--entrypoints.udpep.udp.timeout=1"
+    - "--accesslog=true"
+    entryPoints:
+      udpep:
         address: ':9999/udp'
 {% endhighlight %}
 
@@ -57,7 +65,7 @@ metadata:
   namespace: default
 spec:
   defaultCertificate:
-	secretName: override-traefik-default-tls-cert
+    secretName: override-traefik-default-tls-cert
 {% endhighlight %}
 
 3. Full example for a HTTP-Basic password protected Traefik https endpoint, with 3 replicas round-robin load balanced:
@@ -148,4 +156,36 @@ spec:
                 name: challenge-web-graphql
                 port:
                   number: 5000
+{% endhighlight %}
+
+4. Example of `Service` + `IngressRouteUDP` resources for custom UDP Traefik entrypoint:
+
+{% highlight yaml %}
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-udp
+  namespace: kube-system
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 9999
+    protocol: UDP
+    targetPort: 9999
+  selector:
+    app.kubernetes.io/instance: traefik
+    app.kubernetes.io/name: traefik
+---
+kind: IngressRouteUDP
+metadata:
+  name: challenge-reverse-bpf
+  namespace: challenge-reverse-bpf
+spec:
+  entryPoints:
+    - udpep
+  routes:
+  - services:
+    - name: challenge-reverse-bpf
+      namespace: challenge-reverse-bpf
+      port: 9999
 {% endhighlight %}
