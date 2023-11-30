@@ -11,7 +11,7 @@ Except we don't have that big of a kubernetes cluster, nor do we need one, so we
 
 `count/jobs.batch` is what we need here. Setting the limit on the number of jobs instead on the number of pods gives us a somewhat generic error code when we try to spawn one concurrent job too many:
 
-```yaml
+{% highlight yaml %}
 apiVersion: v1
 kind: ResourceQuota
 metadata:
@@ -19,6 +19,6 @@ metadata:
 spec:
   hard:
     count/jobs.batch: 30
-```
+{% endhighlight %}
 
 In the job-spawning code, simply watch for errors from the kubernetes API.
