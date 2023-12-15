@@ -14,3 +14,4 @@ CVEs I contributed to or discovered:
 * [CVE-2022-2220](https://access.redhat.com/security/cve/cve-2022-2220)
 * [CVE-2022-4039](https://access.redhat.com/security/cve/cve-2022-4039)
 * [CVE-2023-3899](https://access.redhat.com/security/cve/CVE-2023-3899)
+* [CVE-2023-50728](https://github.com/octokit/webhooks.js/security/advisories/GHSA-pwfr-8pq7-x9qv)
