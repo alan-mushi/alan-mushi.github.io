@@ -16,3 +16,4 @@ CVEs I contributed to or discovered:
 * [CVE-2023-3899](https://access.redhat.com/security/cve/CVE-2023-3899)
 * [CVE-2023-50728](https://github.com/octokit/webhooks.js/security/advisories/GHSA-pwfr-8pq7-x9qv)
 * [CVE-2024-0217](https://access.redhat.com/security/cve/cve-2024-0217)
+* [CVE-2024-25131](https://access.redhat.com/security/cve/cve-2024-25131)
