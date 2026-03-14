@@ -11,7 +11,7 @@ debugger and follow along in your IDE of choice. Except debugging a go process
 in a remote pod on some cluster can be a bit tedious. So I made
 [debug-me-maybe](https://github.com/rh-tguittet/debug-me-maybe) to simplify
 this process, it uploads the delve debugger, runs it on a pid of your choice,
-and tunnels back the socket from the pod to your machine.
+and tunnels back the socket from the pod to your machine, all in one command.
 
 This is completely inspired by [ksniff](https://github.com/eldadru/ksniff)
-since I replaced the wireshark bits for the debugging ones.
+since I replaced the tcpdump bits for the debugging ones.
