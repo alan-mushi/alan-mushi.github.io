@@ -133,8 +133,8 @@ After=dev-logi\x2dmx\x2danywhere\x2d3s.device
 
 [Service]
 Type=oneshot
-ExecStart=ratbagctl thundering-gerbil button 2 action set special ratchet-mode-switch
-ExecStart=ratbagctl thundering-gerbil button 5 action set button 3
+ExecStart=/bin/sh -c 'ratbagctl $(ratbagctl| cut -d : -f 1) button 2 action set special ratchet-mode-switch'
+ExecStart=/bin/sh -c 'ratbagctl $(ratbagctl| cut -d : -f 1) button 5 action set button 3'
 
 [Install]
 WantedBy=dev-logi\x2dmx\x2danywhere\x2d3s.device
